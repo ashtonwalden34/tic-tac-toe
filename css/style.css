@@ -10,8 +10,8 @@ body {
 }
 
 #board-wrapper {
-    border: solid olive 15px;
     overflow: hidden;
+    margin-top: 5vh;
 }
 
 div[id^="row-"] {
@@ -25,4 +25,18 @@ div[id^="row-"] div {
     float: left;
 }
 
-/*  Test */
+div#row-1 div {
+    border-top: none;
+} 
+
+div#row-3 div {
+    border-bottom: none;
+} 
+
+div[id^="row-"] div:first-child {
+    border-left: none;
+}
+
+div[id^="row-"] div:last-child {
+    border-right: none;
+}
