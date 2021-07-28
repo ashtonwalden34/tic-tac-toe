@@ -23,6 +23,11 @@ div[id^="row-"] div {
     height: 200px;
     width: 200px;
     float: left;
+
+    /* For X Entered */
+    text-align: center;
+    font-family: chiller;
+    font-size: 175px;
 }
 
 div#row-1 div {
