@@ -9,25 +9,61 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
 
-<body>
-    <div id="board-wrapper">
-        <div id="row-1">
-            <div onclick="gameMove(this);"></div>
-            <div onclick="gameMove(this);"></div>
-            <div onclick="gameMove(this);"></div> 
-        </div>
-        <div id="row-2">
-            <div onclick="gameMove(this);"></div>
-            <div onclick="gameMove(this);"></div>
-            <div onclick="gameMove(this);"></div> 
-        </div>
-        <div id="row-3">
-            <div onclick="gameMove(this);"></div>
-            <div onclick="gameMove(this);"></div>
-            <div onclick="gameMove(this);"></div> 
-        </div>
-    </div>
+<body onload="startGame()">
+    <!-- Add form to get player info and limit length of name -->
 
-    
+
+
+
+    <div id="page-wrapper">
+        <h1 id="page-header">Tic Tac Toe</h1>
+        
+        <h2 id="turn-message"></h2>
+
+        <div id="board-wrapper">
+            <div id="row-1">
+                <div onclick="gameMove(this);"></div>
+                <div onclick="gameMove(this);"></div>
+                <div onclick="gameMove(this);"></div> 
+            </div>
+            <div id="row-2">
+                <div onclick="gameMove(this);"></div>
+                <div onclick="gameMove(this);"></div>
+                <div onclick="gameMove(this);"></div> 
+            </div>
+            <div id="row-3">
+                <div onclick="gameMove(this);"></div>
+                <div onclick="gameMove(this);"></div>
+                <div onclick="gameMove(this);"></div> 
+            </div>
+        </div>
+
+        <div id="table-wrapper">
+            <table>
+                <tr id=row-1>
+                    <th onclick="gameMove(this)"></th>
+                    <th onclick="gameMove(this)"></th>
+                    <th onclick="gameMove(this)"></th>
+                </tr>
+                <tr id=row-2>
+                    <th onclick="gameMove(this)"></th>
+                    <th onclick="gameMove(this)"></th>
+                    <th onclick="gameMove(this)"></th>
+                </tr>
+                <tr id=row-3>
+                    <th onclick="gameMove(this)"></th>
+                    <th onclick="gameMove(this)"></th>
+                    <th onclick="gameMove(this)"></th>
+                </tr>
+            </table>
+        </div>
+        
+
+       
+
+
+
+
+    </div>
 </body>
 </html>
