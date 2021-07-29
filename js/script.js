@@ -13,6 +13,7 @@ var restartButton = document.getElementById("restart-button");
 
 var records = [0,0,0];
 // may need to create after they are assigned values
+var recordsTable = document.getElementById("records-table");
 var playerOne = document.getElementById("player-one-title");
 var playerTwo = document.getElementById("player-two-title");
 var playerOneRecord = document.getElementById("player-one-record");
@@ -27,6 +28,7 @@ var tiesRecord = document.getElementById("ties-record");
 
 function start() {
     restartButton.style.display="none";
+    recordsTable.style.display="none";
 }
 
 function setUp() {
@@ -34,6 +36,8 @@ function setUp() {
 
     players[0] = document.getElementById("player-one").value;
     players[1] = document.getElementById("player-two").value;
+
+    recordsTable.style.display="inline-block";
 
     playerOne.innerText = players[0];
     playerTwo.innerText = players[1]; 
