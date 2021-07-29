@@ -11,10 +11,11 @@ var playerTurn = 0;
 var gameOver;
 var restartButton = document.getElementById("restart-button");
 
+var records = [0,0,0];
+
 function start() {
     restartButton.style.display="none";
 }
-
 
 function setUp() {
     restartButton.style.display = "none";
@@ -63,8 +64,6 @@ function gameMove(selectedDiv, divValue) {
 
         // adds values to each player based on space selected
         scores[playerTurn] += divValue;
-        // console.log(players[0] + " score: " + scores[0]);
-        // console.log(players[1] + " score: " + scores[1]);
         
         // call win function, checks for win and displays win message if win condition is met
         if (winCondition()){
@@ -96,6 +95,8 @@ function winCondition() {
             gameOver = true;
             // restartButton.innerHTML = '<button id="restart-button" onclick="startGame()">Play Again?</button>'
             restartButton.style.display = "inline-block";
+            records[playerTurn] ++;
+            console.log(records[0], records[1], records[2]);
             return true;
         }
     }
@@ -104,6 +105,32 @@ function winCondition() {
         gameOver = true;
         // restartButton.innerHTML = '<button id="restart-button" onclick="startGame()">Play Again?</button>'
         restartButton.style.display = "inline-block";
+        records[2]++;
+        console.log(records[0], records[1], records[2]);
     }
     return false;
 }
+
+
+// function recordKeeping() {
+//     if (winCondition) {
+//         records[playerTurn] ++;
+//         console.log(scores[0], scores[1], scores[2]);
+    
+//     } else if (scores[0] + scores[1] == 511) {
+//         records[2]++;
+//         console.log(scores[0], scores[1], scores[2]);
+//     }
+// }
+
+
+
+
+/*
+scores array, [0, 1, 2]
+    - 0 player 1 score
+    - 1 player 2 score
+    - 2 ties
+
+increment correct [] on win
+*/
