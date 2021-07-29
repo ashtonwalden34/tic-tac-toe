@@ -21,11 +21,6 @@ var playerTwoRecord = document.getElementById("player-two-record");
 var tiesRecord = document.getElementById("ties-record");
 
 
-
-
-
-
-
 function start() {
     restartButton.style.display="none";
     recordsTable.style.display="none";
