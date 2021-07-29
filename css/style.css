@@ -18,7 +18,7 @@ body {
 
 #page-header {
     color: #A0ECD0;
-    font-size: 100px;
+    font-size: 80px;
     text-align: center;
     text-decoration: underline;
 }
@@ -45,6 +45,13 @@ input {
     background-color: #F2D7EE;
     border: 2px #714955 solid;
     color: #714955;
+}
+
+#restart-button {
+    background-color: #F2D7EE;
+    color: #714955;
+    padding: 1vw;
+    margin-top: 2vh;
 }
 
 #board-wrapper {
