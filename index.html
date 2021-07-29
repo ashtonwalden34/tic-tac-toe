@@ -13,21 +13,21 @@
     <body onload="start()">
     <!-- Add form to get player info and limit length of name -->
     <div id="page-wrapper">
-        <h1 id="page-header">Tic Tac Toe</h1>
+        <h1 id="page-header">Tic-Tac-Toe</h1>
 
         <form id="player-form" action="javascript: setUp();">
-            <input type='text' maxlength="10" id="player-one">
+            <label for="player-one">Player 1:</label>
+            <input type='text' name="player-one" maxlength="10" id="player-one">
             <br>
-            <input type='text' maxlength="10" id="player-two">
+            <br>
+            <label for="player-two">Player 2:</label>
+            <input type='text' name="player-two" maxlength="10" id="player-two">
+            <br>
             <br>
             <input type='submit' id='player-form-submit'>
         </form>
         
         <h2 id="game-message"></h2>
-
-        <div id="table-wrapper">
-            <table id="game-board"></table>
-        </div>
 
         <table id="records-table">
             <tr id="record-row"></tr>
@@ -39,7 +39,10 @@
                 <td class="records-num" id="player-two-record"></td>
                 <td class="records-num" id="ties-record"></td>
         </table>
-        
+
+        <div id="table-wrapper">
+            <table id="game-board"></table>
+        </div>
 
         <button id="restart-button" onclick="startGame()">Play Again?</button>
     </div>
