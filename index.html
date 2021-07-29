@@ -11,9 +11,9 @@
 
 <body onload="startGame()">
     <!-- Add form to get player info and limit length of name -->
+    <form id="playerForm">
 
-
-
+    </form>
 
     <div id="page-wrapper">
         <h1 id="page-header">Tic Tac Toe</h1>
@@ -40,7 +40,7 @@
 
         <div id="table-wrapper">
             <table id="game-board">
-                <tr id=row-1>
+                <!-- <tr id=row-1>
                     <th onclick="gameMove(this, 1)"></th>
                     <th onclick="gameMove(this, 2)"></th>
                     <th onclick="gameMove(this, 4)"></th>
@@ -54,13 +54,13 @@
                     <th onclick="gameMove(this, 64)"></th>
                     <th onclick="gameMove(this, 128)"></th>
                     <th onclick="gameMove(this, 256)"></th>
-                </tr>
+                </tr> -->
             </table>
         </div>
         
 
        
-    <button onclick="restartGame()">Play Again?</button>
+    <button id="restart-button" onclick="startGame()">Play Again?</button>
 
 
 

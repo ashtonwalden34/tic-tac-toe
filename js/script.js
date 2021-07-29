@@ -6,6 +6,7 @@ var scores = [];
 var winValues = [7, 56, 73, 84, 146, 273, 292, 448];
 var playerTurn = 0;
 var gameOver;
+var restartButton = document.getElementById("restart-button")
 
 
 function gameMove(selectedDiv, divValue) {
@@ -38,37 +39,14 @@ function gameMove(selectedDiv, divValue) {
 
             // displays message showing current players turn
             document.getElementById("game-message").innerText = players[playerTurn] + "'s Turn."
+
+            // hides play again button
+            restartButton.style.display = "none";
         } 
     } 
 }
 
 function startGame() {
-        // sets scores array to hold 0, 0
-        scores = [0, 0];
-        // sets gameOver to false
-        gameOver = false;
-        // grabs player from players array and displays message showing it's their turn
-        document.getElementById("game-message").innerText = players[playerTurn] + "'s Turn."
-}
-
-
-// loops through possible win values, &s with current score to check for win condition, returns true if win condition met returns false if not
-function winCondition() {
-    for (i = 0; i < winValues.length; i++) {
-        if ((scores[playerTurn] & winValues[i]) == winValues[i]) {
-            gameOver = true;
-            return true;
-        }
-    }
-    // board is filled then gameOver variable is set to true
-    if (scores[0] + scores[1] == 511) {
-        gameOver = true;
-    }
-
-    return false;
-}
-
-function restartGame() {
     var board = document.getElementById("game-board");
     var innerDivs = "";
     var counter = 1;
@@ -83,5 +61,47 @@ function restartGame() {
     }
     board.innerHTML = innerDivs;
 
-    startGame();
+    // sets scores array to hold 0, 0
+    scores = [0, 0];
+    // sets gameOver to false
+    gameOver = false;
+    // grabs player from players array and displays message showing it's their turn
+    document.getElementById("game-message").innerText = players[playerTurn] + "'s Turn."
 }
+
+
+// loops through possible win values, &s with current score to check for win condition, returns true if win condition met returns false if not
+function winCondition() {
+    for (i = 0; i < winValues.length; i++) {
+        if ((scores[playerTurn] & winValues[i]) == winValues[i]) {
+            gameOver = true;
+            restartButton.style.display = "inline-block";
+            return true;
+        }
+    }
+    // board is filled then gameOver variable is set to true
+    if (scores[0] + scores[1] == 511) {
+        gameOver = true;
+    }
+    restartButton.style.display = "inline-block";
+
+    return false;
+}
+
+// function restartGame() {
+//     // var board = document.getElementById("game-board");
+//     // var innerDivs = "";
+//     // var counter = 1;
+
+//     // for (i = 1; i <=3; i++) {
+//     //     innerDivs += '<tr id="row-' + i + '">'
+//     //     for (j = 1; j <=3; j++) {
+//     //         innerDivs += '<th onclick="gameMove(this,' +  counter + ')"></th>'
+//     //         counter *=2;
+//     //     }
+//     //     innerDivs += '</tr>';
+//     // }
+//     // board.innerHTML = innerDivs;
+
+//     startGame();
+// }
