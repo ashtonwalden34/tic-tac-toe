@@ -9,14 +9,19 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
 
-<body onload="startGame()">
+<!-- <body onload="startGame()"> -->
+    <body>
     <!-- Add form to get player info and limit length of name -->
-    <form id="playerForm">
-
-    </form>
-
     <div id="page-wrapper">
         <h1 id="page-header">Tic Tac Toe</h1>
+
+        <form id="player-form" action="javascript: setUp();">
+            <input type='text' maxlength="10" id="player-one">
+            <br>
+            <input type='text' maxlength="10" id="player-two">
+            <br>
+            <input type='submit' id='player-form-submit'>
+        </form>
         
         <h2 id="game-message"></h2>
 
@@ -59,8 +64,8 @@
         </div>
         
 
-       
-    <button id="restart-button" onclick="startGame()">Play Again?</button>
+        <button id="restart-button" onclick="startGame()">Play Again?</button>
+    
 
 
 
