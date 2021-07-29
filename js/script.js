@@ -11,6 +11,10 @@ var playerTurn = 0;
 var gameOver;
 var restartButton = document.getElementById("restart-button");
 
+function start() {
+    restartButton.style.display="none";
+}
+
 
 function setUp() {
     restartButton.style.display = "none";
@@ -26,6 +30,7 @@ function setUp() {
 function startGame() {
     var playerForm = document.getElementById("player-form");
     playerForm.style.display = "none";
+    restartButton.style.display = "none";
 
     var board = document.getElementById("game-board");
     var innerDivs = "";
@@ -90,6 +95,7 @@ function winCondition() {
         if ((scores[playerTurn] & winValues[i]) == winValues[i]) {
             gameOver = true;
             // restartButton.innerHTML = '<button id="restart-button" onclick="startGame()">Play Again?</button>'
+            restartButton.style.display = "inline-block";
             return true;
         }
     }
@@ -97,6 +103,7 @@ function winCondition() {
     if (scores[0] + scores[1] == 511) {
         gameOver = true;
         // restartButton.innerHTML = '<button id="restart-button" onclick="startGame()">Play Again?</button>'
+        restartButton.style.display = "inline-block";
     }
     return false;
 }
