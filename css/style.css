@@ -82,7 +82,7 @@ table {
     overflow: hidden;
 }
 
-tr th {
+tr[id^="row-"] th {
     border: solid olive 5px;
     height: 22vh;
     width: 20vw;
@@ -107,4 +107,36 @@ tr#row-1 th {
 
  tr[id^="row-"] th:last-child {
     border-right: none;
+}
+
+
+
+/* #records-table {
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+/* #records-row {
+    border: solid black 3px;
+    width: 20vw;
+    height: 20vh;
+    text-align: center;
+}
+
+#records-row th {
+    font-size: 5vh;
+    width: 20vw;
+    background-color: blue;
+} */
+
+.records-head {
+    font-size: 5vh;
+    width: 20vw;
+    background-color: blue;
+}
+
+.records-num {
+    font-size: 5vh;
+    width: 20vw;
+    background-color: blue;
 }

@@ -12,6 +12,18 @@ var gameOver;
 var restartButton = document.getElementById("restart-button");
 
 var records = [0,0,0];
+// may need to create after they are assigned values
+var playerOne = document.getElementById("player-one-title");
+var playerTwo = document.getElementById("player-two-title");
+var playerOneRecord = document.getElementById("player-one-record");
+var playerTwoRecord = document.getElementById("player-two-record");
+var tiesRecord = document.getElementById("ties-record");
+
+
+
+
+
+
 
 function start() {
     restartButton.style.display="none";
@@ -23,12 +35,17 @@ function setUp() {
     players[0] = document.getElementById("player-one").value;
     players[1] = document.getElementById("player-two").value;
 
-    console.log(players[1]);
+    playerOne.innerText = players[0];
+    playerTwo.innerText = players[1]; 
+
+    updateRecords();
 
     startGame();
 }
 
 function startGame() {
+    updateRecords();
+
     var playerForm = document.getElementById("player-form");
     playerForm.style.display = "none";
     restartButton.style.display = "none";
@@ -97,6 +114,7 @@ function winCondition() {
             restartButton.style.display = "inline-block";
             records[playerTurn] ++;
             console.log(records[0], records[1], records[2]);
+            updateRecords();
             return true;
         }
     }
@@ -107,30 +125,15 @@ function winCondition() {
         restartButton.style.display = "inline-block";
         records[2]++;
         console.log(records[0], records[1], records[2]);
+        updateRecords();
     }
     return false;
 }
 
 
-// function recordKeeping() {
-//     if (winCondition) {
-//         records[playerTurn] ++;
-//         console.log(scores[0], scores[1], scores[2]);
-    
-//     } else if (scores[0] + scores[1] == 511) {
-//         records[2]++;
-//         console.log(scores[0], scores[1], scores[2]);
-//     }
-// }
 
-
-
-
-/*
-scores array, [0, 1, 2]
-    - 0 player 1 score
-    - 1 player 2 score
-    - 2 ties
-
-increment correct [] on win
-*/
+function updateRecords() {
+    playerOneRecord.innerText = records[0];
+    playerTwoRecord.innerText = records[1];
+    tiesRecord.innerText = records[2];
+}
